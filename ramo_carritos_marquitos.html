@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ramo de carritos — Para Marquitos 🚗💐</title>
+<style>
+  body{font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:0; background:linear-gradient(180deg,#fff,#f6f9fb); color:#0b1220; padding:28px; display:flex; align-items:center; justify-content:center; min-height:100vh}
+  .wrap{max-width:980px; width:100%; background:#fff; border-radius:12px; box-shadow:0 12px 40px rgba(2,6,23,0.08); padding:20px; display:grid; grid-template-columns:1fr 360px; gap:18px}
+  header{grid-column:1/3; display:flex; align-items:center; justify-content:space-between; gap:12px}
+  h1{margin:0; font-size:20px}
+  .left{padding:8px}
+  .bouquet{display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start}
+  .box{width:140px; height:160px; border-radius:8px; background:linear-gradient(180deg,#fafafa,#fff); border:1px solid #e6eef6; box-shadow:0 6px 18px rgba(2,6,23,0.04); display:flex; flex-direction:column; align-items:center; padding:10px; cursor:pointer; position:relative}
+  .hw{font-size:12px; color:#666; margin-top:6px}
+  .carfront{width:110px; height:70px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; color:white; text-shadow:0 1px 0 rgba(0,0,0,0.25)}
+  .label{font-size:13px; font-weight:700; margin-top:8px; text-align:center}
+  .right .box{cursor:default}
+  .controls{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
+  button{background:#e11d48; color:white; border:0; padding:10px 12px; border-radius:8px; cursor:pointer; font-weight:700}
+  .small{font-size:13px; color:#56626b}
+  .previewCard{background:linear-gradient(180deg,#fff,#fff); padding:12px; border-radius:10px; border:1px solid #f1f5f9}
+  .share{margin-top:10px; word-break:break-all; background:#f8fafc; padding:8px; border-radius:8px; border:1px solid #eef2f7}
+  .music{display:flex; gap:8px; align-items:center; margin-top:10px}
+  input[type="text"], textarea{width:100%; padding:8px; border-radius:8px; border:1px solid #e6eef6; font-size:14px; box-sizing:border-box}
+  textarea{min-height:84px}
+  footer{grid-column:1/3; margin-top:8px; font-size:13px; color:#6b7280}
+  /* colors for car fronts */
+  .c-red{background:linear-gradient(180deg,#ef4444,#dc2626)} 
+  .c-blue{background:linear-gradient(180deg,#3b82f6,#1e40af)}
+  .c-silver{background:linear-gradient(180deg,#e6e6e6,#bcbcbc); color:#111}
+  .c-black{background:linear-gradient(180deg,#111827,#374151)}
+  .c-green{background:linear-gradient(180deg,#10b981,#047857)}
+  .c-orange{background:linear-gradient(180deg,#f97316,#c2410c)}
+  .c-purple{background:linear-gradient(180deg,#8b5cf6,#5b21b6)}
+  .c-yellow{background:linear-gradient(180deg,#f59e0b,#b45309)}
+  .ribbon{position:absolute; left:8px; top:8px; background:#fde68a; color:#92400e; padding:4px 6px; font-size:12px; border-radius:6px; font-weight:700}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Ramo de carritos — Para Marquitos 🚗💐</h1>
+      <div class="small">Diseño: cajitas estilo Hot Wheels con autos al estilo “Rápidos y Furiosos”. Música sugerida: "Eres" — Café Tacvba.</div>
+    </header>
+
+    <div class="left">
+      <div class="bouquet" id="bouquet">
+        <!-- Each box represents a Hot Wheels box with a car nickname -->
+        <div class="box" data-car="Nissan GT-R R34 (Brian)" data-phrase="Eres mi nitro en la vida.">
+          <div class="ribbon">Caja 1</div>
+          <div class="carfront c-blue">GT-R R34</div>
+          <div class="label">Nissan GT-R</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+
+        <div class="box" data-car="Dodge Charger (Toretto)" data-phrase="Con vos siempre a lo rápido y a lo bonito.">
+          <div class="ribbon">Caja 2</div>
+          <div class="carfront c-black">Charger</div>
+          <div class="label">Dodge Charger</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+
+        <div class="box" data-car="Toyota Supra (Kaido)" data-phrase="Tu turbo acelera mi corazón.">
+          <div class="ribbon">Caja 3</div>
+          <div class="carfront c-orange">Supra</div>
+          <div class="label">Toyota Supra</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+
+        <div class="box" data-car="Mazda RX-7 (Drift)" data-phrase="Eres la curva que me encanta tomar.">
+          <div class="ribbon">Caja 4</div>
+          <div class="carfront c-red">RX-7</div>
+          <div class="label">Mazda RX-7</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+
+        <div class="box" data-car="Ford Mustang (Muscle)" data-phrase="Si fueras una carrera, te correría otra vez.">
+          <div class="ribbon">Caja 5</div>
+          <div class="carfront c-silver">Mustang</div>
+          <div class="label">Ford Mustang</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+
+        <div class="box" data-car="Lamborghini Huracán (Exótico)" data-phrase="Mi mejor velocidad es cuando estoy contigo.">
+          <div class="ribbon">Caja 6</div>
+          <div class="carfront c-yellow">Huracán</div>
+          <div class="label">Lamborghini</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+
+        <div class="box" data-car="Subaru Impreza (Rally)" data-phrase="Contigo no hay obstáculos, solo caminos.">
+          <div class="ribbon">Caja 7</div>
+          <div class="carfront c-green">Impreza</div>
+          <div class="label">Subaru</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+
+        <div class="box" data-car="BMW M3 (Street)" data-phrase="Eres mi mejor línea en la pista de la vida.">
+          <div class="ribbon">Caja 8</div>
+          <div class="carfront c-purple">M3</div>
+          <div class="label">BMW M3</div>
+          <div class="hw">Hot Wheels</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="small">Haz clic en cualquier cajita para ver la frase y personalizarla.</div>
+
+      <div class="controls">
+        <button id="randomize">Mezclar frases</button>
+        <button id="downloadBouquet">Descargar ramo (HTML)</button>
+        <button id="openYT">Abrir "Eres" en YouTube</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="previewCard">
+        <div style="font-weight:800" id="carName">Selecciona una cajita</div>
+        <div style="margin-top:8px" id="carPhrase">Aquí aparecerá la frase cuando selecciones una cajita.</div>
+        <div style="margin-top:12px" class="small">Puedes editar la frase y descargar sólo esa tarjeta.</div>
+        <div style="margin-top:10px">
+          <label class="small">Editar frase</label>
+          <textarea id="editPhrase"></textarea>
+          <div style="display:flex; gap:8px; margin-top:8px">
+            <button id="savePhrase">Guardar frase</button>
+            <button id="copyPhrase">Copiar</button>
+          </div>
+        </div>
+
+        <div class="music">
+          <label class="small">Música de fondo (opcional):</label>
+          <input id="musicUrl" type="text" placeholder="Pega URL directa de un MP3 o deja vacío y usa YouTube" />
+        </div>
+
+        <div style="margin-top:8px" class="small">Si deseas que suene "Eres" automáticamente, pulsa "Abrir 'Eres' en YouTube" y reproduce en la nueva pestaña. No incluyo el audio por derechos de autor.</div>
+
+        <div style="margin-top:10px">
+          <label class="small">Link compartible</label>
+          <div class="share" id="shareLink">—</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Generado por Lunita — Ramo temático inspirado en Rápidos y Furiosos. Si quieres que lo suba y te dé un enlace público en GitHub Pages, te explico cómo subirlo o lo preparo para subir (necesito acceso o un repositorio tuyo).</footer>
+  </div>
+
+<script>
+  const boxes = document.querySelectorAll('.left .box');
+  const carName = document.getElementById('carName');
+  const carPhrase = document.getElementById('carPhrase');
+  const editPhrase = document.getElementById('editPhrase');
+  const shareLink = document.getElementById('shareLink');
+  let selected = null;
+
+  function updateShare(){
+    // encode the bouquet state as fragment so nothing is sent to servers
+    const state = Array.from(document.querySelectorAll('.left .box')).map(b=>{
+      return {car:b.dataset.car, phrase:b.dataset.phrase};
+    });
+    const data = encodeURIComponent(JSON.stringify(state));
+    const url = location.origin + location.pathname + '#/ramo?d=' + data;
+    shareLink.textContent = url;
+    history.replaceState({},'', '#/ramo?d=' + data);
+  }
+
+  boxes.forEach(b=>{
+    b.addEventListener('click', ()=>{
+      selected = b;
+      carName.textContent = b.dataset.car;
+      carPhrase.textContent = b.dataset.phrase;
+      editPhrase.value = b.dataset.phrase;
+    });
+  });
+
+  document.getElementById('savePhrase').addEventListener('click', ()=>{
+    if(!selected) return alert('Selecciona una cajita primero');
+    selected.dataset.phrase = editPhrase.value || selected.dataset.phrase;
+    carPhrase.textContent = selected.dataset.phrase;
+    updateShare();
+  });
+
+  document.getElementById('copyPhrase').addEventListener('click', async ()=>{
+    if(!selected) return alert('Selecciona una cajita primero');
+    try{ await navigator.clipboard.writeText(selected.dataset.phrase); alert('Frase copiada ✓'); }catch(e){ alert('No se pudo copiar'); }
+  });
+
+  document.getElementById('randomize').addEventListener('click', ()=>{
+    // shuffle phrases among boxes
+    const phrases = Array.from(boxes).map(b=>b.dataset.phrase);
+    for(let i=phrases.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [phrases[i],phrases[j]]=[phrases[j],phrases[i]]; }
+    boxes.forEach((b,i)=>{ b.dataset.phrase = phrases[i]; });
+    if(selected){ carPhrase.textContent = selected.dataset.phrase; editPhrase.value = selected.dataset.phrase; }
+    updateShare();
+  });
+
+  // Generate standalone downloadable HTML for the whole bouquet with current phrases
+  document.getElementById('downloadBouquet').addEventListener('click', ()=>{
+    const state = Array.from(boxes).map(b=>({car:b.dataset.car, phrase:b.dataset.phrase}));
+    const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Ramo de carritos para Marquitos</title><style>body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:0;background:linear-gradient(180deg,#fff,#f6f9fb);display:flex;align-items:center;justify-content:center;height:100vh} .wrap{max-width:720px;padding:18px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06)} .box{margin:8px 0;padding:10px;border-radius:10px;border:1px solid #eee}.h{font-weight:800}</style></head><body><div class="wrap"><h2>Ramo de carritos — Para Marquitos</h2>`
+    + state.map(s=>`<div class="box"><div class="h">${escapeHtml(s.car)}</div><div style="margin-top:6px">${escapeHtml(s.phrase)}</div></div>`).join('')
+    + `<div style="margin-top:12px;color:#666">Generado con amor 💌</div></div></body></html>`;
+    const blob = new Blob([html],{type:'text/html'});
+    const u = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = u; a.download = 'ramo_carritos_marquitos.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(u);
+  });
+
+  document.getElementById('openYT').addEventListener('click', ()=>{
+    // Open YouTube search for "Eres Cafe Tacvba"
+    window.open('https://www.youtube.com/results?search_query=Eres+Cafe+Tacvba','_blank');
+  });
+
+  // Parse state from URL if present
+  (function loadFromUrl(){
+    try{
+      const hash = location.hash || '';
+      if(!hash.includes('?')) return updateShare();
+      const q = new URLSearchParams(hash.split('?')[1]);
+      const d = q.get('d');
+      if(!d) return updateShare();
+      const state = JSON.parse(decodeURIComponent(d));
+      // apply phrases if lengths match
+      const boxArr = Array.from(boxes);
+      if(state.length === boxArr.length){
+        state.forEach((s,i)=>{ boxArr[i].dataset.phrase = s.phrase; boxArr[i].dataset.car = s.car; });
+      }
+    }catch(e){ console.log('err',e); }
+    updateShare();
+  })();
+
+  function escapeHtml(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;'); }
+</script>
+</body>
+</html>
